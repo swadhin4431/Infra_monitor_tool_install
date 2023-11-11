@@ -1,21 +1,16 @@
 ---
-#Script Name: Prometheus Installation Ansible YAML                                                                      
-#Description: Prometheus Installation Ansible YAML                                                                       
-#Args:                                                                                    
-#Author: Yashwant Bokadia (Pinakastra Computing)                                              
-#Email: cloud@pinakastra.com
 
 - name  : "Prometheus Setup"
   hosts : monitoring
   become: yes
   tasks :
     - name: "Download the Monitoring Repo"
-      shell: git clone https://github.com/Pinakastra-Computing/Monitoring.git /opt/pinakastra/monitoring
+      shell: git clone https://github.com/swadhin4431/infra_mon_install.git /opt/monitoring
 
     - name: "Change the working directory to /opt/pinakastra/monitoring"
       shell: /bin/bash prometheus.sh
       args:
-        chdir: /opt/pinakastra/monitoring
+        chdir: /opt/monitoring
 
     - name: "Remove the Monitoring Repo"
-      shell: rm -rf /opt/pinakastra/monitoring
+      shell: rm -rf /opt/monitoring
