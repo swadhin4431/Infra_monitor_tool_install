@@ -1,8 +1,6 @@
 #Script Name: Prometheus Setup                                                                                        
 #Description: Promethues Setup YAML                                                                       
-#Args:                                                                                    
-#Author: Yashwant Bokadia (Pinakastra Computing)                                              
-#Email: cloud@pinakastra.com 
+
 
 global:
   scrape_interval: 15s
