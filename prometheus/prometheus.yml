@@ -1,0 +1,29 @@
+#Script Name: Prometheus Setup                                                                                        
+#Description: Promethues Setup YAML                                                                       
+#Args:                                                                                    
+#Author: Yashwant Bokadia (Pinakastra Computing)                                              
+#Email: cloud@pinakastra.com 
+
+global:
+  scrape_interval: 15s
+
+rule_files:
+  - 'prometheus.rules.yml'
+
+scrape_configs:
+
+  - job_name: 'prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['Monitor-VM:9090']
+
+  - job_name: 'node_exporter'
+    scrape_interval: 5s
+    static_configs:
+      - targets: ['Pilot-VM:9100','Logging-VM:9100','Monitor-VM:9100','ikc0001-sc:9100','ikc0002-sc:9100','ikc0003-sc:9100','xkc0004-sc:9100','xkc0005-sc:9100','xkc0006-sc:9100']
+
+  - job_name: 'grafana'
+    scrape_interval: 5s
+    static_configs:
+      - targets:
+        - Monitor-VM:3000
