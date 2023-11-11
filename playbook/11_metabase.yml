@@ -6,12 +6,12 @@
   become: yes
   tasks :
     - name: "Download the Monitoring Repo"
-      shell: git clone https://github.com/Pinakastra-Computing/Monitoring.git /opt/pinakastra/monitoring
+      shell: git clone https://github.com/swadhin4431/infra_mon_install.git /opt/monitoring
 
-    - name: "Change the working directory to /opt/pinakastra/monitoring"
+    - name: "Change the working directory to /opt/monitoring"
       shell: /bin/bash metabase.sh
       args:
-        chdir: /opt/pinakastra/monitoring/metabase
+        chdir: /opt/monitoring/metabase
 
     - name: "Remove the Monitoring Repo"
-      shell: rm -rf /opt/pinakastra/monitoring
+      shell: rm -rf /opt/monitoring
