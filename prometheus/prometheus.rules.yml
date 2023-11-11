@@ -1,8 +1,5 @@
-#Script Name: Prometheus Rules Setup                                                                                        
-#Description: Promethues Rules Setup YAML                                                                       
-#Args:                                                                                    
-#Author: Yashwant Bokadia (Pinakastra Computing)                                              
-#Email: cloud@pinakastra.com                                       
+                                                                                  
+                                       
 
 groups:
   - name: example_alert
